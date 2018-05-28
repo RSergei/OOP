@@ -6,19 +6,19 @@ class BidirectionalCircularList
 	Node<T> *head;
 	int size = 0;
 public:
-	BidirectionalCircularList(); //инициализация
-	BidirectionalCircularList(const BidirectionalCircularList &other);  //копирование
-	BidirectionalCircularList(BidirectionalCircularList &&other); //перемещение
-	BidirectionalCircularList &operator=(const BidirectionalCircularList &other); //присваивание
-	BidirectionalCircularList &operator=(BidirectionalCircularList &&other); //присваивание с еремещением
-	~BidirectionalCircularList(); //деструктор
+	BidirectionalCircularList(); //ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї
+	BidirectionalCircularList(const BidirectionalCircularList &other);  //ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГҐ
+	BidirectionalCircularList(BidirectionalCircularList &&other); //ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ
+	BidirectionalCircularList &operator=(const BidirectionalCircularList &other); //ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
+	BidirectionalCircularList &operator=(BidirectionalCircularList &&other); //ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ Г± ГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐГ¬
+	~BidirectionalCircularList(); //Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 	int GetSize();
 	Node<T> *Find(int number);
-	void Push(T element, int number);  //Вставка (добавление) элемента
-	T Remove(int number);  //Удаление (взятие) элемента
-	T Peek(int number);  //Просмотр (взятие без удаления) элемента
-	bool CheckNoEmptyList();  //Проверка наличия элементов
-	friend ostream & operator << <T>(ostream & stream, const BidirectionalCircularList<T> &a); //Вывод
+	void Push(T element, int number);  //Г‚Г±ГІГ ГўГЄГ  (Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
+	T Remove(int number);  //Г“Г¤Г Г«ГҐГ­ГЁГҐ (ГўГ§ГїГІГЁГҐ) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
+	T Peek(int number);  //ГЏГ°Г®Г±Г¬Г®ГІГ° (ГўГ§ГїГІГЁГҐ ГЎГҐГ§ ГіГ¤Г Г«ГҐГ­ГЁГї) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
+	bool CheckNoEmptyList();  //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г Г«ГЁГ·ГЁГї ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
+	friend ostream & operator << <T>(ostream & stream, const BidirectionalCircularList<T> &a); //Г‚Г»ГўГ®Г¤
 };
 template<typename T>
 BidirectionalCircularList<T>::BidirectionalCircularList()
@@ -32,7 +32,7 @@ BidirectionalCircularList<T>::BidirectionalCircularList()
 	node->previous = head;
 }
 template<typename T>
-BidirectionalCircularList<T>::~BidirectionalCircularList() //деструктор
+BidirectionalCircularList<T>::~BidirectionalCircularList() //Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 {
 	Node<T> *node = head;
 	while (node->next != head)
@@ -43,7 +43,7 @@ BidirectionalCircularList<T>::~BidirectionalCircularList() //деструктор
 	delete head;
 }
 template<typename T>
-BidirectionalCircularList<T>::BidirectionalCircularList(const BidirectionalCircularList &other) //конструктор копирования
+BidirectionalCircularList<T>::BidirectionalCircularList(const BidirectionalCircularList &other) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 {
 	Node<T> oldOldNode = other.head;
 	head = other.head;
@@ -61,14 +61,14 @@ BidirectionalCircularList<T>::BidirectionalCircularList(const BidirectionalCircu
 	head->previous = newOldNode;
 }
 template<typename T>
-BidirectionalCircularList<T>::BidirectionalCircularList(BidirectionalCircularList &&other) //перемещение
+BidirectionalCircularList<T>::BidirectionalCircularList(BidirectionalCircularList &&other) //ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ
 {
 	head = other.head;
 	size = other.size;
 	other.head = nullptr;
 }
 template<typename T>
-BidirectionalCircularList<T> &BidirectionalCircularList<T>::operator=(const BidirectionalCircularList &other) //присваивание
+BidirectionalCircularList<T> &BidirectionalCircularList<T>::operator=(const BidirectionalCircularList &other) //ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
 {
 	if (this == &other)
 	{
@@ -87,7 +87,7 @@ BidirectionalCircularList<T> &BidirectionalCircularList<T>::operator=(const Bidi
 	}
 }
 template<typename T>
-BidirectionalCircularList<T> &BidirectionalCircularList<T>::operator=(BidirectionalCircularList &&other) //присваивание с перемещением
+BidirectionalCircularList<T> &BidirectionalCircularList<T>::operator=(BidirectionalCircularList &&other) //ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ Г± ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐГ¬
 {
 	if (this == &other)
 	{
@@ -113,7 +113,7 @@ Node<T> *BidirectionalCircularList<T>::Find(int number)
 	return node;
 }
 template<typename T>
-void BidirectionalCircularList<T>::Push(T element, int number)  //Вставка (добавление) элемента
+void BidirectionalCircularList<T>::Push(T element, int number)  //Г‚Г±ГІГ ГўГЄГ  (Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 {
 	Node<T> *previousNode = this->Find(number);
 	Node<T> *nextNode = previousNode->next;
@@ -126,7 +126,7 @@ void BidirectionalCircularList<T>::Push(T element, int number)  //Вставка (добав
 	size++;
 }
 template<typename T>
-T BidirectionalCircularList<T>::Remove(int number)  //Удаление (взятие) элемента
+T BidirectionalCircularList<T>::Remove(int number)  //Г“Г¤Г Г«ГҐГ­ГЁГҐ (ГўГ§ГїГІГЁГҐ) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 {
 	if (size > 0)
 	{
@@ -143,18 +143,18 @@ T BidirectionalCircularList<T>::Remove(int number)  //Удаление (взятие) элемента
 	return 0;
 }
 template<typename T>
-T BidirectionalCircularList<T>::Peek(int number)  //Просмотр (взятие без удаления) элемента
+T BidirectionalCircularList<T>::Peek(int number)  //ГЏГ°Г®Г±Г¬Г®ГІГ° (ГўГ§ГїГІГЁГҐ ГЎГҐГ§ ГіГ¤Г Г«ГҐГ­ГЁГї) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 {
 	Node<T> *node = this->Find(number);
 	return node->data;
 }
 template<typename T>
-bool BidirectionalCircularList<T>::CheckNoEmptyList()  //Проверка наличия элементов
+bool BidirectionalCircularList<T>::CheckNoEmptyList()  //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г Г«ГЁГ·ГЁГї ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
 {
 	return (size > 0);
 }
 template<typename T>
-ostream & operator << (ostream & stream, const BidirectionalCircularList<T> &a) //Вывод
+ostream & operator << (ostream & stream, const BidirectionalCircularList<T> &a) //Г‚Г»ГўГ®Г¤
 {
 	BidirectionalCircularList<T> b = a;
 	stream << "=====\n";
