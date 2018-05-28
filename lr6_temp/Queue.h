@@ -20,27 +20,27 @@ private:
 
 public:
 
-	Queue(); //инициализация
+	Queue(); //ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї
 
-	Queue(const Queue &other); //копирование
+	Queue(const Queue &other); //ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГҐ
 
-	Queue(Queue &&other); //перемещение
+	Queue(Queue &&other); //ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ
 
-	Queue &operator=(const Queue &other); //присваивание
+	Queue &operator=(const Queue &other); //ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
 
-	Queue &operator=(Queue &&other); //присваивание с еремещением
+	Queue &operator=(Queue &&other); //ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ Г± ГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐГ¬
 
-	~Queue(); //деструктор
+	~Queue(); //Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 
 	int GetSize();
 
-	void Push(T element); //Вставка (добавление) элемента
+	void Push(T element); //Г‚Г±ГІГ ГўГЄГ  (Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 
-	T Pop(); //Удаление (взятие) элемента
+	T Pop(); //Г“Г¤Г Г«ГҐГ­ГЁГҐ (ГўГ§ГїГІГЁГҐ) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 
-	T Peek(); //Просмотр (взятие без удаления) элемента
+	T Peek(); //ГЏГ°Г®Г±Г¬Г®ГІГ° (ГўГ§ГїГІГЁГҐ ГЎГҐГ§ ГіГ¤Г Г«ГҐГ­ГЁГї) ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 
-	friend ostream & operator << <T>(ostream & stream, const Queue<T> &a); //Вывод
+	friend ostream & operator << <T>(ostream & stream, const Queue<T> &a); //Г‚Г»ГўГ®Г¤
 
 };
 
